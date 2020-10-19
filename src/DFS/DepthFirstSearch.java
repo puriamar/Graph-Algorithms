@@ -13,11 +13,21 @@ public class DepthFirstSearch {
 			if(!v.isVisited())
 			{
 				v.setVisited(true);
-				dfsWithStack(v);
+				dfsRecursion(v);
 			}
 		}
 	}
 	
+	public void dfsRecursion(Vertex root)
+	{
+		root.setVisited(true);
+		System.out.println("Current Vertex: " + root);
+		
+		for(Vertex v: root.getAdjacencyList())
+		{
+			dfsRecursion(v);
+		}
+	}
 	public void dfsWithStack(Vertex root)
 	{
 		stack = new Stack<Vertex>();

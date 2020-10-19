@@ -20,11 +20,12 @@ public class DepthFirstSearch {
 	
 	public void dfsRecursion(Vertex root)
 	{
-		root.setVisited(true);
+		
 		System.out.println("Current Vertex: " + root);
 		
 		for(Vertex v: root.getAdjacencyList())
 		{
+			v.setVisited(true);
 			dfsRecursion(v);
 		}
 	}
